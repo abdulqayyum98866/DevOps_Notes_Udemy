@@ -28,7 +28,7 @@ Use PowerShell 7+, not old Windows PowerShell
 > winget upgrade --id Microsoft.PowerShell
 
 # 2 - Connect to AWS EC2 instance through powershell using SSH client
-Source: 
+Source: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-ssh.html
 
 ## - PREREQUISITES (CHECK ONCE)
 
@@ -57,6 +57,36 @@ PS E:\\Keys> ls
 Directory: E:\Keys
 
 DevOps_ap_tokyo.pem
+
+## 2.2 – Fix Permission on .pem File (IMPORTANT)
+
+**Note:** Install an SSH client on your local computer (if needed).
+
+Windows blocks SSH if file permissions are too open.
+
+Run the following commands once:
+
+```powershell
+icacls.exe Linux_practice.pem /inheritance:r
+icacls.exe Linux_practice.pem /grant:r "$($env:USERNAME):(R)"
+```
+
+## 2.3 - To connect to your instance using an SSH client
+### (Public DNS) To use the public DNS name, enter the following command.
+```powershell
+ssh -i /path/key-pair-name.pem instance-user-name@instance-public-dns-name
+```
+The following is an example response.
+---
+The authenticity of host 'ec2-198-51-100-1.compute-1.amazonaws.com (198-51-100-1)' can't be established.
+ECDSA key fingerprint is l4UB/neBad9tvkgJf1QZWxheQmR59WgrgzEimCG6kZY.
+Are you sure you want to continue connecting (yes/no)?
+
+Enter `yes`
+---
+Warning: Permanently added 'ec2-198-51-100-1.compute-1.amazonaws.com' (ECDSA) to the list of known hosts.
+
+**Note:** The instance is connected.
 
 
 
