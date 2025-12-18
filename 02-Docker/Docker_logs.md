@@ -60,6 +60,33 @@ docker run -d -P "container name or ID"
 
 <img width="747" height="143" alt="image" src="https://github.com/user-attachments/assets/2a9fd7b0-5133-4594-8848-bed49ca79d73" />
 
+## 3 - Output of the cmd executed be the container
+```md
+docker logs "container name or ID"
+```
+<img width="507" height="202" alt="image" src="https://github.com/user-attachments/assets/f2d8fdfc-8fb4-4399-b5fc-eea20645a06c" />
+
+## 4 - Don't run in the background (attach mode)
+```md
+dcker run -P "container name or ID"
+```
+**Note:**
+- Prompt back Ctrl+c
+
+## 5 - Some container not start, It can be exited state
+- See this scenario
+- I have run
+
+```md
+docker run -d -P "Image name"
+```
+
+- -d → Detached mode
+- -P → Publish all exposed ports
+
+
+
+
 
 
 
