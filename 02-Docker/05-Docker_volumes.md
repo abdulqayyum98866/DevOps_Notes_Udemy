@@ -53,6 +53,20 @@ docker run --name vprofiledb -d -e MYSQL_ROOT_PASSWORD=mypass -p 3030:3306 -v /h
 
 **Volume:**
 
+## 3 - Create a volume
+```md
+docker volume create "volume name"
+```
+
+- To check
+
+```bash
+docker volume ls
+```
+
+<img width="594" height="390" alt="image" src="https://github.com/user-attachments/assets/0bbb9f46-d2fa-4502-b92d-18baa0a04a5d" />
+
+
 
 
 
