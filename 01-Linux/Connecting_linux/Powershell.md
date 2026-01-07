@@ -12,7 +12,7 @@ Type to know powershell version.
 ```powershell
 > $PSVersionTable
 ```
-## 1.4 - Major monor package (Check version details)
+## 1.4 - Major minor package (Check version details)
 ```powershell
 > $PSVersionTable.psversion
 ```
